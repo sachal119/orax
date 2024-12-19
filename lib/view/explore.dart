@@ -73,9 +73,15 @@ class ExploreScreen extends StatelessWidget {
                   // Row for Profile and User Info
                   Row(
                     children: [
-                      CircleAvatar(
-                        radius: 24.r,
-                        backgroundImage: NetworkImage(profileImage),
+                      InkWell(
+                        onTap: () {
+                          Get.toNamed('/profile/${post.userId}');
+                          ;
+                        },
+                        child: CircleAvatar(
+                          radius: 24.r,
+                          backgroundImage: NetworkImage(profileImage),
+                        ),
                       ),
                       SizedBox(width: 10.w),
                       Column(
